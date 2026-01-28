@@ -57,6 +57,10 @@ document.addEventListener("mousemove", (e) => {
         heart.style.transform = "translateY(-50px)";
         heart.style.opacity = "0";
     }, 100);
+
+window.onblur = () => { document.title = "Come back! 🥺"; };
+window.onfocus = () => { document.title = "Will You Be My Valentine?"; };
     
     setTimeout(() => { heart.remove(); }, 1000);
 });
+
