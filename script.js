@@ -3,7 +3,6 @@ const noBtn = document.getElementById("noBtn");
 const question = document.getElementById("question");
 const gif = document.getElementById("main-gif");
 
-// List of messages for the "No" button
 const messages = [
     "Are you sure?",
     "Really sure??",
@@ -16,20 +15,30 @@ const messages = [
 
 let messageIndex = 0;
 
+// --- 1. THE GROWTH LOGIC ---
 noBtn.addEventListener("click", () => {
-    // 1. Change the text on the "No" button
+    // Change No Button Text
     noBtn.innerHTML = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
 
-    // 2. Make the "Yes" button bigger
-    const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-    yesBtn.style.fontSize = (currentSize * 1.5) + "px";
-    yesBtn.style.padding = (currentSize * 0.8) + "px " + (currentSize * 1.5) + "px";
+    // Get current font size or default to 20 if it can't read it
+    const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize) || 20;
+    
+    // We increase the size by a set amount (pixels) rather than a multiplier 
+    // to ensure it grows every single time.
+    const newSize = currentSize + 20; 
+    
+    yesBtn.style.fontSize = newSize + "px";
+    
+    // Proportional padding to keep the button shape
+    yesBtn.style.padding = `${newSize * 0.5}px ${newSize * 1.2}px`;
 });
 
+// --- 2. THE YES LOGIC ---
 yesBtn.addEventListener("click", () => {
-    if (typeof confetti === 'function') confetti();
-    
+    if (typeof confetti === 'function') {
+        confetti();
+    }
     question.innerHTML = "Yay!!! I love you! ❤️";
     gif.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExejNvaWhtOGRkNXJ3OWNmeXdoYjJoejIwZ2tqbWY2YnpwaWpjdjl6ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TjSPQgowhhJdHgvnwA/giphy.gif"; 
     
@@ -37,7 +46,7 @@ yesBtn.addEventListener("click", () => {
     yesBtn.style.display = "none";
 });
 
-// Cursor Trail Effect
+// --- 3. THE HEART TRAIL ---
 document.addEventListener("mousemove", (e) => {
     const heart = document.createElement("span");
     heart.innerHTML = "❤️";
@@ -46,23 +55,20 @@ document.addEventListener("mousemove", (e) => {
     heart.style.top = e.clientY + "px";
     heart.style.fontSize = "20px";
     heart.style.pointerEvents = "none";
-    heart.style.opacity = "1";
-    heart.style.transition = "all 1s ease";
-    heart.style.zIndex = "9999";
+    heart.style.zIndex = "1000";
+    heart.style.transition = "transform 1s, opacity 1s";
     
     document.body.appendChild(heart);
     
     setTimeout(() => {
         heart.style.transform = "translateY(-50px)";
         heart.style.opacity = "0";
-    }, 100);
-
+    }, 50);
+    
     setTimeout(() => { heart.remove(); }, 1000);
 });
 
-// Tab Title Logic (Moved outside mousemove)
+// --- 4. THE TAB TITLE ---
 window.onblur = () => { document.title = "Come back! 🥺"; };
 window.onfocus = () => { document.title = "Will You Be My Valentine?"; };
-
-
 
