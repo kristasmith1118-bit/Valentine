@@ -39,3 +39,24 @@ yesBtn.addEventListener("click", () => {
 
 });
 
+
+document.addEventListener("mousemove", (e) => {
+    const heart = document.createElement("span");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+    heart.style.fontSize = "20px";
+    heart.style.pointerEvents = "none";
+    heart.style.opacity = "1";
+    heart.style.transition = "all 1s ease";
+    
+    document.body.appendChild(heart);
+    
+    setTimeout(() => {
+        heart.style.transform = "translateY(-50px)";
+        heart.style.opacity = "0";
+    }, 100);
+    
+    setTimeout(() => { heart.remove(); }, 1000);
+});
