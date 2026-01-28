@@ -35,6 +35,4 @@ yesBtn.addEventListener("click", () => {
     // Hide the buttons
     noBtn.style.display = "none";
     yesBtn.style.display = "none";
-
 });
-
