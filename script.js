@@ -31,7 +31,7 @@ noBtn.addEventListener("click", () => {
     
     // We increase the size by a set amount (pixels) rather than a multiplier 
     // to ensure it grows every single time.
-    const newSize = currentSize + 100; 
+    const newSize = currentSize + 40; 
     
     yesBtn.style.fontSize = newSize + "px";
     
@@ -76,6 +76,7 @@ document.addEventListener("mousemove", (e) => {
 // --- 4. THE TAB TITLE ---
 window.onblur = () => { document.title = "Come back! 🥺"; };
 window.onfocus = () => { document.title = "Will You Be My Valentine?"; };
+
 
 
 
