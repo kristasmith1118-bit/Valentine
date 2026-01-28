@@ -1,6 +1,7 @@
 body {
     background-color: #A7C7E7;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* This will now work on every device */
+    font-family: 'Itim', cursive; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,7 +36,9 @@ h1 {
     align-items: center;
 }
 
+
 button {
+    font-family: 'Itim', cursive;
     padding: 15px 30px;
     font-size: 1.2rem;
     border: none;
@@ -53,4 +56,11 @@ button {
     background-color: #dc3545;
     color: white;
     position: relative;
+
+}
+
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
