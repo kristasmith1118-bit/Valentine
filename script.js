@@ -28,6 +28,7 @@ noBtn.addEventListener("click", () => {
 });
 
 yesBtn.addEventListener("click", () => {
+    confetti();
     // Final screen content
     question.innerHTML = "Yay!!! I love you! ❤️";
     gif.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExejNvaWhtOGRkNXJ3OWNmeXdoYjJoejIwZ2tqbWY2YnpwaWpjdjl6ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TjSPQgowhhJdHgvnwA/giphy.gif"; // Success GIF
@@ -37,3 +38,4 @@ yesBtn.addEventListener("click", () => {
     yesBtn.style.display = "none";
 
 });
+
