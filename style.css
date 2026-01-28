@@ -1,5 +1,5 @@
 body {
-    background-color: #ffdeeb;
+    background-color: #A7C7E7;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     display: flex;
     justify-content: center;
@@ -53,4 +53,5 @@ button {
     background-color: #dc3545;
     color: white;
     position: relative;
+
 }
