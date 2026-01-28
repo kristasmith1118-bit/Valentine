@@ -23,8 +23,8 @@ noBtn.addEventListener("click", () => {
 
     // 2. Make the "Yes" button bigger
     const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-    yesBtn.style.fontSize = (currentSize * 1.5) + "px";
-    yesBtn.style.padding = (currentSize * 0.8) + "px " + (currentSize * 1.5) + "px";
+    yesBtn.style.fontSize = (currentSize * 1) + "px";
+    yesBtn.style.padding = (currentSize * 0.8) + "px " + (currentSize * 1) + "px";
 });
 
 yesBtn.addEventListener("click", () => {
@@ -35,4 +35,5 @@ yesBtn.addEventListener("click", () => {
     // Hide the buttons
     noBtn.style.display = "none";
     yesBtn.style.display = "none";
+
 });
