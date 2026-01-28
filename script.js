@@ -7,8 +7,6 @@ const gif = document.getElementById("main-gif");
 const messages = [
     "Are you sure?",
     "Really sure??",
-    "Think again!",
-    "Last chance!",
     "Ur a HOE!!!",
     "You will regret thisssss",
     "You are mean :(",
@@ -38,4 +36,5 @@ yesBtn.addEventListener("click", () => {
     // Hide the buttons
     noBtn.style.display = "none";
     yesBtn.style.display = "none";
+
 });
