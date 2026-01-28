@@ -11,7 +11,6 @@ const messages = [
     "You will regret thisssss",
     "You are mean :(",
     "I won't buy you a cat",
-    "Or a dog",
     "PLEASEEEE"
 ];
 
@@ -38,3 +37,4 @@ yesBtn.addEventListener("click", () => {
     yesBtn.style.display = "none";
 
 });
+
