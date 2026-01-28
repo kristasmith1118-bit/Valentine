@@ -10,6 +10,11 @@ const messages = [
     "You will regret thisssss",
     "You are mean :(",
     "I won't buy you a cat",
+    "Or a dog",
+    "Or any animal",
+    "I'm begging",
+    "I'm desperate",
+    "Don't say no plzzzz",
     "PLEASEEEE"
 ];
 
@@ -71,6 +76,7 @@ document.addEventListener("mousemove", (e) => {
 // --- 4. THE TAB TITLE ---
 window.onblur = () => { document.title = "Come back! 🥺"; };
 window.onfocus = () => { document.title = "Will You Be My Valentine?"; };
+
 
 
 
