@@ -21,10 +21,17 @@ noBtn.addEventListener("click", () => {
     noBtn.innerHTML = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
 
-    // 2. Make the "Yes" button bigger (Changed * 1 to * 1.4)
+    // 2. Calculate new size
     const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-    yesBtn.style.fontSize = (currentSize * 1.4) + "px";
-    yesBtn.style.padding = (currentSize * 0.5) + "px " + (currentSize * 1.4) + "px";
+    const newSize = currentSize * 1.6; // Multiplier increased for better effect
+    
+    // 3. Apply the new size
+    yesBtn.style.fontSize = newSize + "px";
+    
+    // Adjust padding proportionally so the button shape stays nice
+    const newPaddingVertical = newSize * 0.7;
+    const newPaddingHorizontal = newSize * 1.5;
+    yesBtn.style.padding = `${newPaddingVertical}px ${newPaddingHorizontal}px`;
 });
 
 yesBtn.addEventListener("click", () => {
@@ -63,4 +70,5 @@ document.addEventListener("mousemove", (e) => {
 // Tab Title Logic (Moved outside mousemove)
 window.onblur = () => { document.title = "Come back! 🥺"; };
 window.onfocus = () => { document.title = "Will You Be My Valentine?"; };
+
 
