@@ -1,7 +1,7 @@
 body {
     background-color: #A7C7E7;
     /* This will now work on every device */
-    font-family: 'Itim', cursive; 
+    font-family: 'Itim', cursive !important; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@ h1 {
 
 
 button {
-    font-family: 'Itim', cursive;
+    font-family: 'Itim', cursive !important;
     padding: 15px 30px;
     font-size: 1.2rem;
     border: none;
@@ -64,3 +64,4 @@ button {
     cursor: pointer;
     transition: all 0.2s ease;
 }
+
